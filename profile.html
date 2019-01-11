@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Pick Your Plate - Profile</title>
+    <meta name="author" content="A-Team">
+    <meta name="description" content="A-Team's Project 1 - Profile Page">
+
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style_all.css">
+
+    <!-- Reference current page's CSS file below -->
+    <link rel="stylesheet" href="./assets/css/style_profile.css">
+</head>
+
+<body>
+    <header class="no-padding">
+        <div class="navbar-fixed">
+            <nav class="navfeature">
+                <div class="wrapper nav-wrapper">
+                    <a href="index.html" class="waves-effect waves-light">
+                        <span class="hide-on-small-only"><img src="./assets/img/logo.png" width="45" id="appicon" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;"></span>
+                        <span id="header-large" style="font-weight:300;font-size:1.3rem;">Pick Your Plate</span>
+                    </a>
+
+                    <ul id="nav-mobile" class="right">
+                        <li id="my-profile" class="menu-item menu-item-type-post_type menu-item-object-page active"><a href="#">My
+                                Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper" id="profile-wrapper">
+            <div id="about-me-wrapper">
+                <h6 class="valign-wrapper"><i class="tiny material-icons">person</i> About</h6>
+                <img src="./assets/img/profile.jpg" alt="profile picture" id="myProfileImg">
+                <p class="valign-wrapper" id="myJoinDate" ><i class="tiny material-icons">perm_contact_calendar</i> Join Date:
+                    2019-01-01</p>
+                <p class="valign-wrapper"id="myLocation"><i class="tiny material-icons">location_on</i> From: Paris, FR</p>
+            </div>
+            <div id="my-favorites-wrapper">
+                <h6 class="valign-wrapper"><i class="tiny material-icons">favorite</i> Favorites</h6>
+                <ul class="flex-wrapper" id="fav-wrapper">
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col l6 s12" id="footer-nav-links">
+                    <a class="white-text" href="#">About Us</a>
+                    <a class="white-text" href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="wrapper center-align">
+                © 2019 Copyright Text
+            </div>
+        </div>
+    </footer>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="/assets/js/js_fbconfig.js"></script>
+    <!-- Reference current page's JS file below -->
+    <script src="./assets/js/js_profile.js"></script>
+</body>
+
+</html>

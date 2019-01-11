@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Pick Your Plate - Restaurant Page</title>
+    <meta name="author" content="A-Team">
+    <meta name="description" content="A-Team's Project 1 - Restaurant Search">
+
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style_all.css">
+
+    <!-- Reference current page's CSS file below -->
+    <link rel="stylesheet" href="./assets/css/style_restaurant.css">
+</head>
+
+<body>
+    <header class="no-padding">
+        <div class="navbar-fixed">
+            <nav class="navfeature">
+                <div class="wrapper nav-wrapper">
+                    <a href="index.html" class="waves-effect waves-light">
+                        <span class="hide-on-small-only"><img src="./assets/img/logo.png" width="45" id="appicon" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;"></span>
+                        <span id="header-large" style="font-weight:300;font-size:1.3rem;">Pick Your Plate</span>
+                    </a>
+
+                    <ul id="nav-mobile" class="right">
+                        <li id="my-profile" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="profile.html">My
+                                Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div id="search-query-wrapper">
+                <form action="">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12 m6">
+                                    <input id="term" type="text" class="validate" required>
+                                    <label for="term">Business name or Keyword</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input id="location" type="text" class="validate" required>
+                                    <label for="location">Address, City, State, Zip, or a Neighbourhood</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 m6" id="price">
+                                    <select multiple>
+                                        <option selected value="1">$</option>
+                                        <option value="2">$$</option>
+                                        <option value="3">$$$</option>
+                                        <option value="4">$$$$</option>
+                                    </select>
+                                    <label>Price Range</label>
+                                </div>
+                                <div class="input-field col s12 m6" id="radius">
+                                    <select required>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                    </select>
+                                    <label>Radius (Miles)</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 m6" id="sort_by">
+                                    <select required>
+                                        <option value="best_match">Best Match</option>
+                                        <option value="rating">Rating</option>
+                                        <option value="review_count">Review Count</option>
+                                        <option value="distance">Distance</option>
+                                    </select>
+                                    <label>Sort Result By</label>
+                                </div>
+                                <div class="input-field col s12 m6" id="limit">
+                                    <select required>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                    <label>Results Per Page</label>
+                                </div>
+                            </div>
+                            <div class="row center-align">
+                                <button class="btn waves-effect waves-light" id="btn-submit" type="submit" name="action">Let's
+                                    Go
+                                    <i class="material-icons right tiny">location_on</i>
+                                </button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+            <div id="search-result-wrapper">
+                <ul class="flex-wrapper" id="result-wrapper">
+                </ul>
+            </div>
+    </main>
+    <footer class="page-footer">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col l6 s12" id="footer-nav-links">
+                    <a class="white-text" href="#">About Us</a>
+                    <a class="white-text" href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="wrapper center-align">
+                © 2019 Copyright Text
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Reference current page's JS file below -->
+    <script src="./assets/js/js_restaurant.js"></script>
+</body>
+
+</html>

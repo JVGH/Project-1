@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.img-div {
+  height: 50vh;
+  width: 50vh;
+  margin-top: 20%;
+  position: relative;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 0%;
+  background: lightgray;
+  color: white;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.button-image {
+  height: 100%;
+  width: 100%;
+}
+
+#takeout-button {
+  float: right;
+  margin-right: 5%;
+}
+
+#eat-in-button {
+  float: left;
+  margin-left: 5%;
+}
+
+.img-text {
+  text-align: center;
+  opacity: 1.5;
+  margin: auto;
+}
