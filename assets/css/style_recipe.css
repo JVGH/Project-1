@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.hope {
+    font-size: 17px;
+}
+
+/** MEDIA QUERIES **/
+
+/*
+Thes rules take effect when the browser's width is
+either 980px or less.
+*/
+@media screen and (max-width: 980px) {
+}
+
+/*
+  These rules take effect when the browser's width
+  is either 768px or less.
+*/
+@media screen and (max-width: 768px) {
+}
+
+/*
+  These rules take effect when the browser's width
+  is either 640px or less.
+*/
+@media screen and (max-width: 640px) {
+}
