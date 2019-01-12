@@ -30,8 +30,8 @@ $(document).ready(function () {
         itemHTML = `<li class="flex-item" id="uri_${uri}">
                         <div class="card">
                             <div class="card-image">
-                                <a href=${url}>
-                                <img src=${image}>
+                                <a href=${url} target="_blank">
+                                <img src=${image} alt="${label}">
                                 </a>
                                 <a class="btn-floating halfway-fab waves-effect waves-light red btn-dislike" id=${uri}><i class="tiny material-icons">favorite_border</i></a>
                             </div>
@@ -61,7 +61,6 @@ $(document).ready(function () {
         let favList = [];
         let favListPromise = new Promise(function (resolve, reject) {
             favRef.once('value').then(function (snapshot) {
-                //favList = snapshot.val();
                 const vals = Object.values(snapshot.val());
                 for (const val of vals) {
                     favList.push(val);
