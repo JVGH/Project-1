@@ -11,7 +11,7 @@ main {
 .img-div {
   height: 50vh;
   width: 50vh;
-  margin-top: 20%;
+  margin-top: 10vh;
   position: relative;
 }
 
@@ -30,13 +30,15 @@ main {
 }
 
 #takeout-button {
-  float: right;
+  float: left;
+  margin-left: 10%;
   margin-right: 5%;
 }
 
 #eat-in-button {
   float: left;
-  margin-left: 5%;
+  margin-right: 4%;
+  margin-left: 10%;
 }
 
 .img-text {
