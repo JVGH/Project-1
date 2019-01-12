@@ -1,8 +1,11 @@
 $(document).ready(function () {
 
+    // Global vars
     $('select').formSelect();
 
     const resultWrapper = $('#result-wrapper');
+
+    // Object to store user input
     let inputData = {
         term: '',
         location: '',
@@ -11,23 +14,28 @@ $(document).ready(function () {
         limit: 0,
         price: ''
     };
+
     let priceInput = '';
 
     let itemHTML = '';
 
     const apiKey = 'kl5VSu4J77OZTRZUSPM5rl01qLMlBWMY3D7URWrJ8kgZF82zFlWbuZJDXIXyGL0wB7MUeFm59C3PFl4aigHmTy-zG7wiumRmAY4BDyX4d-pGbg_1JWsbC6rtp1AyXHYx'
 
+    // AJAX Promise Fx
     ajaxPromise = (params) => {
         return new Promise(function (resolve, reject) {
             $.ajax(params).done(resolve).fail(reject);
         });
     };
 
+    // Form SUBMIT Eventhandler
     $('form').submit(function (event) {
         event.preventDefault();
 
+        // Empty result div
         resultWrapper.empty();
         
+        // Store user input
         inputData = {
             term: $('#term').val().trim(),
             location: $('#location').val().trim(),
@@ -44,8 +52,10 @@ $(document).ready(function () {
             inputData['price'] = priceInput;
         }
 
+        // Clear user input
         $(this).trigger('reset');
 
+        // Query API
         let queryURL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
         queryURL += '&' + $.param(inputData);
 
@@ -72,6 +82,7 @@ $(document).ready(function () {
         });
     });
 
+    // Populate result div Fx
     populateItemHTML = (item) => {
         let outputData = {
             address: item.location.display_address.join('<br>'),
@@ -123,6 +134,7 @@ $(document).ready(function () {
 
         resultWrapper.append(itemHTML);
 
+        // Initialize tooltips
         $('.tooltipped').tooltip({
             delay: 50,
             html: true
