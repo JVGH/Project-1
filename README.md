@@ -9,4 +9,6 @@ Address/PhoneNumber can be obtained by clicking on the image.
 Directions to the restaurant can be obtained by clicking on the map icon.
 Yelp page of the restaurant can be accessed by clicking on the web icon.
 
+Link to "Pick Your Plate":  https://jvgh.github.io/Project-1/
+
 Enjoy cooking!
