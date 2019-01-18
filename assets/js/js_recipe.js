@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    
     // Retrieving objects from local storage and storing it in a variable
     var results = JSON.parse(localStorage.getItem("results"));
     console.log("results from local Storage: ", results);
@@ -39,7 +39,32 @@ $(document).ready(function () {
         // Retreiving and storing recipe-id value in a variable
         var recipeId = $(this).attr("recipe-id");
         console.log('Value stored in recipeId: ', recipeId);
-        favRef.push(recipeId);
+        var state = $(this).attr('data-state');
+        console.log('starting value from data-state: ', state);
+
+        if (state === 'not-liked') {
+            favRef.push(recipeId);
+            $(this).html("<i class='material-icons'>done</i>");
+            $(this).attr('class', 'btn-floating halfway-fab waves-effect waves-light green')
+            $(this).attr('data-state', 'liked');
+        }
+        /* 
+        else {
+            /*
+            var storageRef = storage.ref();
+            var imagesRef = storageRef.child('favorites');
+            imagesRef.delete().then(function() {
+                // File deleted successfully
+              }).catch(function(error) {
+                // Uh-oh, an error occurred!
+              });
+            //favRef.delete(recipeId);
+            
+            $(this).html("<i class='material-icons'>add</i>");
+            $(this).attr('data-state', 'not-liked');
+        }
+        */
+
     });
 
     ///////////FUNCTIONS ///////////////
@@ -110,11 +135,17 @@ $(document).ready(function () {
             // Creating a <div> and giving it a Materialize class of card-image
             var imgCardDiv = $('<div>').addClass('card-image');
 
-            // Creating <a> tag that will wrapp around <img> tag. Currentlly working on this.
+            // Creating <a> tag that will wrapp around <img> tag.
             var imageAtag = $('<a>').attr('href', results[i].recipe.shareAs);
+
+            // Adding code to make link open on a seperate page
+            //imageAtag.attr('target', '_blank');
 
             // Creating an image tag and giving it an attribute
             var imgTag = $('<img>').attr('src', results[i].recipe.image);
+
+            // Giving imgTag a class of img
+            imgTag.attr('class', 'img');
 
             // Appending 'imgTag' to 'imageAtag'
             imageAtag.append(imgTag);
@@ -130,6 +161,9 @@ $(document).ready(function () {
 
             // Storing the 'recipe-id' to the aTag
             aTag.attr('recipe-id', recipeId);
+
+            // Giving 'aTag' a data-state attribute
+            aTag.attr('data-state', 'not-liked');
 
             // Creating an <i> tag and giving a a Materialize class
             var iTag = $('<i>').addClass('material-icons').text('add');
@@ -147,6 +181,9 @@ $(document).ready(function () {
 
             // Creating a <span> tag that will store the recipe's label
             var spanTag = $('<span>').addClass('card-title').text(results[i].recipe.label);
+
+            // Giving 'spanTag' a 'recipe-title' atribute
+            spanTag.attr('recipe-title', results[i].recipe.label);
 
             // Appending spanTag to cardContentDiv
             cardContentDiv.append(spanTag);
@@ -180,11 +217,17 @@ $(document).ready(function () {
             // Creating a <div> and giving it a Materialize class of card-image
             var imgCardDiv = $('<div>').addClass('card-image');
 
-            // Creating <a> tag that will wrapp around <img> tag. Currentlly working on this.
+            // Creating <a> tag that will wrapp around <img> tag.
             var imageAtag = $('<a>').attr('href', results[i].recipe.shareAs);
+
+            // Adding code to make link open on a seperate page
+            //imageAtag.attr('target', '_blank');
 
             // Creating an image tag and giving it an attribute
             var imgTag = $('<img>').attr('src', results[i].recipe.image);
+
+            // Giving imgTag a class of img
+            imgTag.attr('class', 'img');
 
             // Appending 'imgTag' to 'imageAtag'
             imageAtag.append(imgTag);
@@ -200,6 +243,9 @@ $(document).ready(function () {
 
             // Storing the 'recipe-id' to the aTag
             aTag.attr('recipe-id', recipeId);
+
+            // Giving 'aTag' a data-state attribute
+            aTag.attr('data-state', 'not-liked');
 
             // Creating an <i> tag and giving a a Materialize class
             var iTag = $('<i>').addClass('material-icons').text('add');
@@ -217,6 +263,9 @@ $(document).ready(function () {
 
             // Creating a <span> tag that will store the recipe's label
             var spanTag = $('<span>').addClass('card-title').text(results[i].recipe.label);
+
+            // Giving 'spanTag' a 'recipe-title' atribute
+            spanTag.attr('recipe-title', results[i].recipe.label);
 
             // Appending spanTag to cardContentDiv
             cardContentDiv.append(spanTag);
