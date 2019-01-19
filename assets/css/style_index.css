@@ -10,7 +10,7 @@ main {
 
 .img-div {
   height: 50vh;
-  width: 50vh;
+  width: auto;
   margin-top: 10vh;
   position: relative;
 }
